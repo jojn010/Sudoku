@@ -1,9 +1,8 @@
 package com.example.firstWebApp.repository;
 
-import com.example.firstWebApp.entities.user;
+import com.example.firstWebApp.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface userRepository extends JpaRepository<user,Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByusername(String username);
 }

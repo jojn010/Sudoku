@@ -1,0 +1,346 @@
+/* ————————————
+   GLOBAL
+———————————— */
+body {
+  background: #1b1b28;
+  color: #f8f8f8;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 10px 0 25px;
+  font-size: 34px;
+  color: #ffd86b;
+  text-shadow: 0 0 10px rgba(255,255,150,0.4);
+}
+
+/* ————————————
+    MENU
+———————————— */
+#menu {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#menu select,
+#menu button {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #2a2a3d;
+  color: #fff;
+  cursor: pointer;
+}
+
+#menu button:hover {
+  background: #ffd86b;
+  color: #1b1b28;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ffd86b;
+}
+
+/* ————————————
+   SUDOKU GRID
+———————————— */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(9, 55px);
+  grid-template-rows: repeat(9, 55px);
+  gap: 0;
+  border: 3px solid #ffffff40;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #14141f;
+  box-shadow: 0 0 20px rgba(255,255,200,0.08);
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  border: 1px solid #2e2e44;
+  background: #2a2a3d;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+/* Fixed numbers */
+.cell.fixed {
+  background: #383851;
+  color: #ffd86b;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Selected */
+.cell.selected {
+  background: #47476d;
+  outline: 2px solid #ffd86b;
+  z-index: 1;
+}
+
+/* Highlight matching numbers */
+.cell.highlight {
+  background: rgba(255,216,107,0.2);
+}
+
+/* Correct / Incorrect */
+.cell.correct {
+  background: #2ecc71;
+  color: #000;
+  fixed
+}
+
+.cell.incorrect {
+  background: #e74c3c;
+  color: #000;
+}
+
+/* ————————————
+   3×3 THICK BORDERS
+———————————— */
+.cell {
+  border-right: 1px solid #2e2e44;
+  border-bottom: 1px solid #2e2e44;
+}
+
+/* every 3 columns */
+.cell:nth-child(3n) {
+  border-right: 3px solid #ffffff40;
+}
+
+/* every 3 rows (rows 3, 6) */
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54),
+.cell:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: 3px solid #ffffff40;
+}
+
+/* top border */
+.cell:nth-child(-n+9) {
+  border-top: 3px solid #ffffff40;
+}
+
+/* left border */
+.cell:nth-child(9n+1) {
+  border-left: 3px solid #ffffff40;
+}
+
+/* ————————————
+   TEXT + LINKS + STATS
+———————————— */
+p {
+  font-size: 18px;
+  margin: 6px;
+}
+
+span {
+  color: #ffd86b;
+  font-weight: bold;
+}
+
+a {
+  margin-top: 10px;
+  color: #ffd86b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0 6px #ffd86b;
+}
+/* ===========================
+   GLOBAL THEME
+   =========================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    color: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Soft glowing card style */
+.page-container, .login-container, .signup-container, .profile-page, table {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.07);
+    align-self: center;
+    
+}
+.login{
+  align-self: center;
+
+}
+
+/* Page titles */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffeecc;
+    text-shadow: 0 0 15px rgba(255, 200, 150, 0.5);
+}
+
+/* ===========================
+   INPUTS & BUTTONS
+   =========================== */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    color: #fff;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 10px rgba(255, 200, 150, 0.4);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff9c5a, #ff6a3d);
+    color: #1c1c1c;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 0 10px rgba(255, 150, 100, 0.4);
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(255, 150, 100, 0.8);
+}
+
+/* ===========================
+   LINKS
+   =========================== */
+a {
+    display: inline-block;
+    margin: 12px;
+    text-decoration: none;
+    color: #ffd7b5;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+a:hover {
+    color: #ff9c5a;
+    text-shadow: 0 0 8px rgba(255, 150, 100, 0.7);
+}
+
+/* ===========================
+   PROFILE PAGE
+   =========================== */
+.profile-page p {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+/* ===========================
+   LEADERBOARD TABLE
+   =========================== */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 700px;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 18px;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+.page-container, .login-container, .signup-container, .profile-page {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+/* PROFILE PAGE FIX — MATCH THE COZY THEME */
+body.profile-page {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    color: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    align-content: center;
+}
+
+/* Profile container */
+.profile-page {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.07);
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Profile text */
+.profile-page p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Profile links */
+.profile-page a {
+    display: inline-block;
+    margin: 12px;
+    text-decoration: none;
+    color: #ffd7b5;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.profile-page a:hover {
+    color: #ff9c5a;
+    text-shadow: 0 0 8px rgba(255, 150, 100, 0.8);
+}
