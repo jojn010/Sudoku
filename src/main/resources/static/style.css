@@ -344,3 +344,21 @@ body.profile-page {
     color: #ff9c5a;
     text-shadow: 0 0 8px rgba(255, 150, 100, 0.8);
 }
+/* Style to make the image and h1 sit next to each other */
+img {
+    /* Make the image smaller */
+    width: 50px; /* Reduced size */
+    height: 50px; /* Reduced size */
+    /* Put it next to the h1 */
+    display: inline-block;
+    vertical-align: middle; /* Align with the text in h1 */
+    margin-right: 10px; /* Add some space between the image and the text */
+}
+
+h1 {
+    /* Put it next to the image */
+    display: inline-block;
+    vertical-align: middle; /* Align with the image */
+    margin: 0; /* Remove default h1 margin to ensure tight alignment */
+}
+
