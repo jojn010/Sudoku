@@ -1,6 +1,10 @@
 package com.example.firstWebApp.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class SudokuGame {
@@ -19,7 +23,6 @@ public class SudokuGame {
     public String getBoard() {
         return board;
     }
-
     public void setBoard(String board) {
         this.board = board;
     }
