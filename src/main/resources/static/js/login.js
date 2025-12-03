@@ -14,8 +14,8 @@ async function login() {
     const user = await res.json();
 
     // save username and id in browser storage
-    localStorage.setItem("username", user.username);
-    localStorage.setItem("userId", user.id);
+        localStorage.setItem("username", user.username);
+        localStorage.setItem("userId", user.id);
 
     // redirect to sudoku page
     window.location.href = "sudoku.html";

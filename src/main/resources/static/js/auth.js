@@ -22,6 +22,7 @@ async function signup() {
 
   if (res.ok) {
     alert("Signup successful! Please log in.");
+
     window.location.href = "login.html"; // 👈 redirects to login
   } else {
     const msg = await res.text();
