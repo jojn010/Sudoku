@@ -7,8 +7,8 @@
 
 const boardContainer = document.getElementById("game-board");
 const mistakesDisplay = document.getElementById("mistakes");
-const winsDisplay = document.getElementById("wins");
-const gamesDisplay = document.getElementById("games");
+//const winsDisplay = document.getElementById("wins");
+//const gamesDisplay = document.getElementById("games");
 
 document.getElementById("startBtn").addEventListener("click", startGame);
 
@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
 function startGame() {
   const diff = document.getElementById("difficulty").value;
   games++;
-  gamesDisplay.innerText = games;
+//  gamesDisplay.innerText = games;
   mistakes = 0;
   mistakesDisplay.innerText = mistakes;
   alert("Game started: " + diff + " mode!");
@@ -193,7 +193,7 @@ function checkWin() {
   }
 
   wins++;
-  winsDisplay.innerText = wins;
+//  winsDisplay.innerText = wins;
   alert("🎉 You solved the Sudoku!");
 
   const userId = localStorage.getItem("userId");
