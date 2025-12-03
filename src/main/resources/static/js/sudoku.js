@@ -1,6 +1,9 @@
-let mistakes = 0;
-let wins = 0;
-let games = 0;
+
+        let mistakes = 0;
+        let wins = 0;
+        let games = 0;
+
+
 
 const boardContainer = document.getElementById("game-board");
 const mistakesDisplay = document.getElementById("mistakes");
@@ -197,7 +200,7 @@ function checkWin() {
   const difficulty = document.getElementById("difficulty").value;
   let score = 1000;
   if (difficulty === "Hard") {
-    score = score * 10 - mistakes * 2;
+    score = scrore * 10 - mistakes * 2;
   } else if (difficulty === "Medium") {
     score = score * 5 - mistakes * 1.5;
   } else {
